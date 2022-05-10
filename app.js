@@ -1,36 +1,36 @@
 // =============Sending Email===============// 
 
-// const express = require('express');
-// const nodemailer = require('nodemailer');
+const express = require('express');
+const nodemailer = require('nodemailer');
 
-// var app = express()
-// var transpoter = nodemailer.createTransport({
-//      host: 'smtp.gmail.com',
-//      port: 587,
-//      secure: false, 
-//      service: "gmail",
-//      auth:{
-//           user: 'peter@auctionsoftware.com',
-//           pass: ''
-//      }
-// })
+var app = express()
+var transpoter = nodemailer.createTransport({
+     host: 'smtp.gmail.com',
+     port: 587,
+     secure: false, 
+     service: "gmail",
+     auth:{
+          user: 'peter@auctionsoftware.com',
+          pass: ''
+     }
+})
 
-// var mailOption = {
-//      from: 'peter@auctionsoftware.com',
-//      to: 'pandiyarajan.auctionsoftware@gmail.com',
-//      subject: 'Email Sent using node js',
-//      html: '<h1>Welcome</h1><p>This is Easy</p>'
-// }
+var mailOption = {
+     from: 'peter@auctionsoftware.com',
+     to: 'pandiyarajan.auctionsoftware@gmail.com',
+     subject: 'Email Sent using node js',
+     html: '<h1>Welcome</h1><p>This is Easy</p>'
+}
 
-// transpoter.sendMail(mailOption ,function(err, info){
-//      if(err){
-//           console.log(err)
-//      }else{
-//           console.log("Email sent : " + info.response)
-//      }
-// })
+transpoter.sendMail(mailOption ,function(err, info){
+     if(err){
+          console.log(err)
+     }else{
+          console.log("Email sent : " + info.response)
+     }
+})
 
-// app.listen(3000 , () => console.log("Listening the Port..."))
+app.listen(3000 , () => console.log("Listening the Port..."))
 
 
 // =============Email validation Via Postman===============// 
